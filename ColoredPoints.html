@@ -14,37 +14,37 @@
     <p id="numdot"> XXX </p>
 
     <!-- adding buttons: -->
-    <p>
+    Colors: 
+    <button type="button" id="clearButton">Clear</button>
     <button type="button" id="green">Green</button>
     <button type="button" id="red">Red</button>
-    <button type="button" id="clearButton">Clear</button>
-    </p>
-    <p>
+    </p>Drawing Mode:
     <button type="button" id="pointButton">Point</button>
     <button type="button" id="triButton">Triangle</button>
     <button type="button" id="circleButton">Circle</button>
     </p>
 
     <!-- adding color sliders: (<p> for separating them on page) -->
-    <p> 
-    Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
-    </p>
-    <p>
+    Color Sliders: &nbsp; &nbsp; &nbsp;
+    Red<input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
+    <p></p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     Green <input type="range" min="0" max="100" value="0" class="slider" id="greenSlide">
-    </p>
-    <p>
+    <p></p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
     Blue <input type="range" min="0" max="100" value="0" class="slider" id="blueSlide">
     </p>
 
     <!-- adding size slider: -->
     <p>
     Size <input type="range" min="0" max="100" value="5" class="slider" id="sizeSlide">
-    </p>
-    
+    <p></p>
     <!-- adding segment number slider: -->
-    <p>
-    Number of Segments <input type="range" min="0" max="100" value="10" class="slider" id="segSlide">
+    Segment Count<input type="range" min="0" max="100" value="10" class="slider" id="segSlide">
     </p>
+
+    <!-- transparency slider: -->
+    Transparency<input type="range" min="0" max="100" value="100" class="slider" id="transparencySlide">
 
     <script src="../libs/webgl-utils.js"></script>
     <script src="../libs/webgl-debug.js"></script>

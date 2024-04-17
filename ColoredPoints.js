@@ -74,11 +74,12 @@ let g_selectedColor = [1.0, 1.0, 1.0, 1.0];
 let g_selectedSize = 5;
 let g_selectedType = POINT;
 let g_selectedSegments = 10;
+let g_selectedTransparency = 100;
 
 function addActionsForHtmlUI() {
     // button events. change STATE, so use "onclick." env unchanged, so don't use event listener
-    document.getElementById("green").onclick = function() { g_selectedColor = [0.0, 1.0, 0.0, 1.0]; };
-    document.getElementById("red").onclick = function() { g_selectedColor = [1.0, 0.0, 0.0, 1.0]; };
+    document.getElementById("green").onclick = function() { g_selectedColor = [0.0, 1.0, 0.0, g_selectedTransparency]; };
+    document.getElementById("red").onclick = function() { g_selectedColor = [1.0, 0.0, 0.0, g_selectedTransparency]; };
     document.getElementById("clearButton").onclick = function() { g_shapesList = []; renderAllShapes(); }; // call render fn whenever we want to clear
 
     document.getElementById("pointButton").onclick = function() { g_selectedType=POINT };
@@ -94,7 +95,10 @@ function addActionsForHtmlUI() {
     document.getElementById("sizeSlide").addEventListener("mouseup", function() { g_selectedSize = this.value; } );
 
     // number of segments slider event
-    document.getElementById("segSlide").addEventListener("mouseup", function() {g_selectedSegments = this.value; } );
+    document.getElementById("segSlide").addEventListener("mouseup", function() { g_selectedSegments = this.value; } );
+
+    // transparency level slider event
+    document.getElementById("transparencySlide").addEventListener("mouseup", function() { g_selectedTransparency = this.value; } );
 }
 
 function main() {
