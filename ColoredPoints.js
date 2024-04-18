@@ -29,7 +29,7 @@ function setupWebGL() {
     canvas = document.getElementById('webgl');
 
     // Get the rendering context for WebGL
-    gl = getWebGLContext(canvas);
+    gl = canvas.getContext("webgl", { preserveDrawingBuffer: true});
     if (!gl) {
         console.log('Failed to get the rendering context for WebGL');
         return;
@@ -74,14 +74,14 @@ let g_selectedColor = [1.0, 1.0, 1.0, 1.0];
 let g_selectedSize = 5;
 let g_selectedType = POINT;
 let g_selectedSegments = 10;
-let g_selectedTransparency = 100;
 
 function addActionsForHtmlUI() {
     // button events. change STATE, so use "onclick." env unchanged, so don't use event listener
-    document.getElementById("green").onclick = function() { g_selectedColor = [0.0, 1.0, 0.0, g_selectedTransparency]; };
-    document.getElementById("red").onclick = function() { g_selectedColor = [1.0, 0.0, 0.0, g_selectedTransparency]; };
+    document.getElementById("green").onclick = function() { g_selectedColor = [0.0, 1.0, 0.0, 1.0]; };
+    document.getElementById("red").onclick = function() { g_selectedColor = [1.0, 0.0, 0.0, 1.0]; };
     document.getElementById("clearButton").onclick = function() { g_shapesList = []; renderAllShapes(); }; // call render fn whenever we want to clear
-
+    document.getElementById("createButton").onclick = function() { createDrawing(); }; // pass REFERENCE to fn, not fn itself (which would be createDrawing())
+    
     document.getElementById("pointButton").onclick = function() { g_selectedType=POINT };
     document.getElementById("triButton").onclick = function() { g_selectedType=TRIANGLE };
     document.getElementById("circleButton").onclick = function() { g_selectedType=CIRCLE };
@@ -97,8 +97,6 @@ function addActionsForHtmlUI() {
     // number of segments slider event
     document.getElementById("segSlide").addEventListener("mouseup", function() { g_selectedSegments = this.value; } );
 
-    // transparency level slider event
-    document.getElementById("transparencySlide").addEventListener("mouseup", function() { g_selectedTransparency = this.value; } );
 }
 
 function main() {

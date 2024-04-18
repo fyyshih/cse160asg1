@@ -14,8 +14,9 @@
     <p id="numdot"> XXX </p>
 
     <!-- adding buttons: -->
-    Colors: 
     <button type="button" id="clearButton">Clear</button>
+    <button type="button" id="createButton">Create</button>
+    Colors: 
     <button type="button" id="green">Green</button>
     <button type="button" id="red">Red</button>
     </p>Drawing Mode:
@@ -27,11 +28,9 @@
     <!-- adding color sliders: (<p> for separating them on page) -->
     Color Sliders: &nbsp; &nbsp; &nbsp;
     Red<input type="range" min="0" max="100" value="100" class="slider" id="redSlide">
-    <p></p>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp;
     Green <input type="range" min="0" max="100" value="0" class="slider" id="greenSlide">
-    <p></p>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; 
     Blue <input type="range" min="0" max="100" value="0" class="slider" id="blueSlide">
     </p>
 
@@ -43,9 +42,6 @@
     Segment Count<input type="range" min="0" max="100" value="10" class="slider" id="segSlide">
     </p>
 
-    <!-- transparency slider: -->
-    Transparency<input type="range" min="0" max="100" value="100" class="slider" id="transparencySlide">
-
     <script src="../libs/webgl-utils.js"></script>
     <script src="../libs/webgl-debug.js"></script>
     <script src="../libs/cuon-utils.js"></script>
@@ -53,5 +49,6 @@
     <script src="ColoredPoints.js"></script>
     <script src="Triangle.js"></script>
     <script src="Circle.js"></script>
+    <script src="Create.js"></script>
   </body>
 </html>

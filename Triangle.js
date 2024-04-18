@@ -1,8 +1,8 @@
 class Triangle {
   constructor() {
     this.type="triangle";
-    this.position = [0.0, 0.0, 0.0];
-    this.color = [1.0, 1.0, 1.0, g_selectedTransparency];
+    this.position = [[0.0, 0.0],  [0.0, 0.0], [0.0, 0.0]];
+    this.color = [1.0, 1.0, 1.0, 1.0];
     this.size = 5.0;
   }
 
@@ -12,7 +12,7 @@ class Triangle {
     var size = this.size;
         
     // pass color of point to u_FragColor var
-    gl.uniform4f(u_FragColor, rgba[0], rgba[1], rgba[2], g_selectedTransparency);
+    gl.uniform4f(u_FragColor, rgba[0], rgba[1], rgba[2], 1.0);
 
     // pass size of point to u_Size var
     gl.uniform1f(u_Size, size);
@@ -22,6 +22,7 @@ class Triangle {
     drawTriangle([xy[0], xy[1], xy[0]+d, xy[1], xy[0], xy[1]+d]);
   }
 }
+
 
 // HelloTriangle.js (c) 2012 matsuda
 function drawTriangle(vertices) {

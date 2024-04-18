@@ -2,7 +2,7 @@ class Circle {
   constructor() {
     this.type="circle";
     this.position = [0.0, 0.0, 0.0];
-    this.color = [1.0, 1.0, 1.0, g_selectedTransparency];
+    this.color = [1.0, 1.0, 1.0, 1.0];
     this.size = 5.0;
     this.segments = g_selectedSegments; // need to define # of segments for circle class
   }
